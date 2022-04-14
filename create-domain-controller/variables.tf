@@ -10,7 +10,7 @@ variable "vnet_hub_address_space" {
 }
 
 variable "vnet_hub_subnets" {
-  description = "(Required) Map of subnet names and address spaces for the Hub Virtual Network. One subnet MUST be named adSubnet"
+  description = "(Required) Map of subnet names and address spaces for the Hub Virtual Network. One subnet MUST be named adSubnet and another must be name AzureFirewallSubnet."
   type        = map(string)
 }
 

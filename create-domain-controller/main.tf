@@ -26,8 +26,7 @@ resource "azurerm_subnet" "subnets" {
 }
 
 module "azure_dc" {
-  source  = "kumarvna/active-directory-forest/azurerm"
-  version = "2.1.0"
+  source = "./azure_dc"
 
   resource_group_name  = azurerm_resource_group.vnet_hub.name
   location             = azurerm_resource_group.vnet_hub.location
@@ -64,7 +63,8 @@ module "azure_dc" {
   ]
 
   depends_on = [
-    azurerm_resource_group.vnet_hub
+    azurerm_resource_group.vnet_hub,
+    azurerm_subnet.subnets
   ]
 }
 
