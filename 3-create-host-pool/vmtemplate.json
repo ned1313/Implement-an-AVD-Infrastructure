@@ -1,0 +1,19 @@
+{
+    "domain": "contosohq.xyz",
+    "galleryImageOffer": "WindowsServer",
+    "galleryImagePublisher": "MicrosoftWindowsServer",
+    "galleryImageSKU": "2019-Datacenter",
+    "imageType": "Gallery",
+    "imageUri": null,
+    "customImageId": null,
+    "namePrefix": "avd-2",
+    "osDiskType": "Premium_LRS",
+    "vmSize": {
+        "id": "Standard_D2s_v3",
+        "cores": 2,
+        "ram": 8
+    },
+    "galleryItemId": "Microsoft.WindowsServer2019Datacenter",
+    "hibernate": false,
+    "diskSizeGB": 0
+}
