@@ -9,3 +9,7 @@ output "dc_public_ip_address" {
 output "vnet_id" {
   value = azurerm_virtual_network.vnet_hub.id
 }
+
+output "subnets" {
+  value = { for subnet in azurerm_subnet.subnets : subnet.name => subnet.id }
+}

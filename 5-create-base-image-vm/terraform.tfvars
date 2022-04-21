@@ -1,0 +1,2 @@
+vmadmin_username = "avdAdmin"
+subnet_id = "/subscriptions/735bcf44-4cc0-4399-86a7-fdcdc5bb5069/resourceGroups/vnet-hub-westus/providers/Microsoft.Network/virtualNetworks/vnet-hub-westus/subnets/poolSubnet"
