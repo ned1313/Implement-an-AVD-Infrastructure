@@ -1,5 +1,5 @@
 # Get the VM and check license type
-$vm = Get-AzVM -ResourceGroup RG_NAME -Name VM_NAME
+$vm = Get-AzVM -ResourceGroup "W10-MS" -Name "W10-MS-0"
 $vm | Select-Object LicenseType
 
 # Update the license type if you don't see Windows_Server or Windows_Client

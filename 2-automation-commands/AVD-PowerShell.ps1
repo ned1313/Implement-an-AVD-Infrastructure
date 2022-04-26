@@ -1,8 +1,11 @@
+# Install the module if you don't already have it
+Install-Module Az.DesktopVirtualization
+
 # Start by setting the resource group and host pool names
-$AVDResourceGroupName = "AVD_RESOURCE_GROUP_NAME" # W10-MS
-$AVDHostPoolName = "AVD_HOST_POOL_NAME" # W10-MS
-$AVDRegion = "AZURE_REGION" # westus
-$AVDWorkspaceName = "AVD_WORKSPACE_NAME" # W10-MS-west
+$AVDResourceGroupName = "W10-MS" # W10-MS
+$AVDHostPoolName = "W10-MS" # W10-MS
+$AVDRegion = "westus" # westus
+$AVDWorkspaceName = "W10-MS-west" # W10-MS-west
 
 # Get information about your current host pool
 Get-AzWvdHostPool -Name $AVDHostPoolName -ResourceGroupName $AVDResourceGroupName | Format-List
@@ -11,8 +14,8 @@ Get-AzWvdHostPool -Name $AVDHostPoolName -ResourceGroupName $AVDResourceGroupNam
 Update-AzWvdHostPool -Name $AVDHostPoolName -ResourceGroupName $AVDResourceGroupName -LoadBalancerType 'DepthFirst'
 
 # Create a new persistent host pool without any hosts
-$PersistentHostPoolName = "PERSISTENT_HOST_POOL" # W10-D
-$PersistentResourceGroupName = "PERSISTENT_RESOURCE_GROUP" # W10-D
+$PersistentHostPoolName = "W10-D" # W10-D
+$PersistentResourceGroupName = "W10-D" # W10-D
 
 New-AzResourceGroup -Name $PersistentResourceGroupName -Location $AVDRegion
 
