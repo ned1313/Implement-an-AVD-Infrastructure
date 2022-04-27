@@ -10,11 +10,6 @@ variable "prefix" {
   default     = "avd"
 }
 
-variable "subnet_id" {
-  type        = string
-  description = "(Required) The ID of the subnet to create the VM in."
-}
-
 variable "vmadmin_username" {
   type        = string
   description = "(Required) The username for the VM."

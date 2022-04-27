@@ -90,6 +90,9 @@ resource "azapi_resource" "image_templates" {
   name      = "${local.base_name}-template"
   parent_id = azurerm_resource_group.aib.id
   location  = var.location
+  depends_on = [
+    azurerm_role_assignment.aib
+  ]
 
   identity {
     type = "UserAssigned"

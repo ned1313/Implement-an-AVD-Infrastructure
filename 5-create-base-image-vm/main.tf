@@ -9,6 +9,27 @@ resource "azurerm_resource_group" "base" {
   location = var.location
 }
 
+# Create an Azure Virtual Network with one subnet
+resource "azurerm_virtual_network" "base" {
+  name                = local.base_name
+  location            = azurerm_resource_group.base.location
+  resource_group_name = azurerm_resource_group.base.name
+
+  address_space = ["10.0.0.0/24"]
+
+  subnet {
+    name           = "subnet1"
+    address_prefix = "10.0.0.0/24"
+  }
+
+}
+
+data "azurerm_subnet" "subnet1" {
+  name                 = "subnet1"
+  resource_group_name  = azurerm_resource_group.base.name
+  virtual_network_name = azurerm_virtual_network.base.name
+}
+
 # Create a NIC for the Azure VM
 resource "azurerm_network_interface" "base" {
   resource_group_name = azurerm_resource_group.base.name
@@ -18,7 +39,7 @@ resource "azurerm_network_interface" "base" {
     name                          = "ipconfig1"
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.base.id
-    subnet_id                     = var.subnet_id
+    subnet_id                     = data.azurerm_subnet.subnet1.id
   }
 }
 # Create a public IP address for the Azure VM
@@ -62,7 +83,7 @@ resource "azurerm_windows_virtual_machine" "base" {
   admin_password      = var.vmadmin_password
 
   network_interface_ids = [azurerm_network_interface.base.id]
-  size               = "Standard_D2s_v3"
+  size                  = "Standard_D2s_v3"
   source_image_reference {
     publisher = "MicrosoftWindowsDesktop"
     offer     = "Windows-10"
@@ -80,7 +101,7 @@ resource "azurerm_windows_virtual_machine" "base" {
 
 # Get the public IP address of the Azure VM from a data source
 data "azurerm_public_ip" "base" {
-  name = azurerm_public_ip.base.name
+  name                = azurerm_public_ip.base.name
   resource_group_name = azurerm_public_ip.base.resource_group_name
 
   depends_on = [
