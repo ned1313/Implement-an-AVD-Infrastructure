@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "artifactsLocation": {
+            "value": "https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts/Configuration_03-30-2022.zip"
+        },
+        "vmImageVhdUri": {
+            "value": ""
+        },
+        "vmGalleryImageOffer": {
+            "value": "Windows-10"
+        },
+        "vmGalleryImagePublisher": {
+            "value": "MicrosoftWindowsDesktop"
+        },
+        "vmGalleryImageSku": {
+            "value": "win10-21h2-avd"
+        },
+        "rdshPrefix": {
+            "value": "W10-D-"
+        },
+        "rdshNumberOfInstances": {
+            "value": 1
+        },
+        "rdshVMDiskType": {
+            "value": "Premium_LRS"
+        },
+        "rdshVmSize": {
+            "value": "Standard_D8s_v3"
+        },
+
+        "administratorAccountUsername": {
+            "value": "avdDCAdmin@contosohq.xyz"
+        },
+        "administratorAccountPassword": {
+            "value": null
+        },
+        "domain": {
+            "value": "contosohq.xyz"
+        },
+        "ouPath": {
+            "value": "OU=Contoso Computers,DC=contosohq,DC=xyz"
+        },
+        "vmAdministratorAccountUsername": {
+            "value": "avdAdmin"
+        },
+        "vmAdministratorAccountPassword": {
+            "value": null
+        },
+        "subnet-id": {
+            "value": null
+        },
+        "vhds": {
+            "value": "vhds/W10-D"
+        },
+        "location": {
+            "value": "westus"
+        },
+        "hostpoolToken": {
+            "value": null
+        }
+    }
+}
