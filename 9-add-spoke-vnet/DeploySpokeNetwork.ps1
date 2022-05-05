@@ -9,10 +9,10 @@ $env:TF_VAR_dc_private_ip_address = terraform -chdir="..\1-create-domain-control
 $env:TF_VAR_session_host_domain = terraform -chdir="..\1-create-domain-controller" output -raw dc_domain
 
 $env:TF_VAR_session_host_admin_username = "avdAdmin"
-$env:TF_VAR_session_host_admin_password = "Z67f643rpwQh7KIY4aiCju0w"
-$env:TF_VAR_session_host_domainuser = "avdDCAdmin@contosohq.xyz"
-$env:TF_VAR_session_host_domainpassword = "Z67f643rpwQh7KIY4aiCju0w"
-$env:TF_VAR_session_host_oupath = "OU=Contoso Computers,DC=contosohq,DC=xyz"
+$env:TF_VAR_session_host_admin_password = "SET_ME_PLEASE"
+$env:TF_VAR_session_host_domainuser = "admin@domain.xyz"
+$env:TF_VAR_session_host_domainpassword = "SET_ME_PLEASE"
+$env:TF_VAR_session_host_oupath = "SET_ME_PLEASE"
 
 
 # Run terraform apply to create the spoke network and peering connection

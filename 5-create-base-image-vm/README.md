@@ -1,27 +1,6 @@
 # Steps to use this config
 
-Set the password for the vm by exporting an environment variable with the desired value:
-
-```bash
-export TF_VAR_vmadmin_password=YOUR_DESIRED_PASSWORD
-```
-
-```PowerShell
-$env:TF_VAR_vmadmin_password="Z67f643rpwQh7KIY4aiCju0w"
-```
-
-Then run through the standard Terraform process:
-
-```bash
-terraform init
-terraform apply
-```
-
-If you don't see a public IP address after the run completes, simply run this command:
-
-```bash
-terraform apply -refresh-only -auto-approve
-```
+Follow the commands found in the `DeployBaseVM.ps1` script.
 
 # After deploy
 

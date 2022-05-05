@@ -1,4 +1,4 @@
-# First run terraform
+# First run terraform to set up the infrastructure
 terraform init
 terraform apply -auto-approve
 

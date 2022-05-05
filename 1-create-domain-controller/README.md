@@ -18,7 +18,17 @@ The resources you deploy from the Terraform script should use a subscription ass
 
 ## Deploying the infrastructure
 
-Follow the standard Terraform workflow:
+Before you try to use the Terraform config, you'll need to use the Azure CLI to authenticate to Azure. Terraform can use the cached credentials to create the target infrastructure.
+
+```bash
+# Login to Azure
+az login
+
+# Select the subscription you want to use
+az account set -S SUBSCRIPTION_NAME
+```
+
+After that, simply follow the standard Terraform workflow:
 
 ```bash
 terraform init

@@ -1,6 +1,9 @@
 # Run through a host pool deployment using Windows Server 2019 in the portal but DO NOT DEPLOY
 # Save the template and parameter files to avd-host-pool.json and avd-host-pool-params.json
 
+# The json files in this directory can serve as an example, but they do have some hard coded values you would need to change.
+# You can either update the values or create your own json files from the Azure portal.
+
 # Get credentials for the domain admin and local vmadmin
 $domainAdmin = get-credential -Message "Enter domain admin credentials"
 $vmAdmin = get-credential -Message "Enter vm admin credentials"
