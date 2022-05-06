@@ -18,6 +18,15 @@ $vmAdmin = get-credential -Message "Enter vm admin credentials"
 # You can get the Subnet ID from the terraform output in the first directory
 $subnets = terraform -chdir="..\1-create-domain-controller" output -json subnets | ConvertFrom-Json
 
+# There are hardcoded values in the `avd-ephemeral-host-parameters.json` file. You will need to update
+# these values to match your environment. In particular, the following values should be changed:
+# - administratorAccountUsername
+# - domain
+# - ouPath
+# - location
+
+# The rest of the parameter values should be left as-is.
+
 # Deploy the template with the parameters file and some extra information
 New-AzResourceGroupDeployment -Name "SessionHost" `
  -ResourceGroupName $resourceGroupName `

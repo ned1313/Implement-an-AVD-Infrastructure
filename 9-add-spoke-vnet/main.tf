@@ -47,7 +47,7 @@ resource "azurerm_virtual_network_peering" "spoke2hub" {
 
 # Create a host pool for the spoke network
 locals {
-  host_pool_name = "${var.prefix}-W10-MS-spoke"
+  host_pool_name      = "${var.prefix}-W10-MS-spoke"
   session_host_prefix = "${var.prefix}-spoke"
 }
 

@@ -1,3 +1,14 @@
+# This script will add the following resources to the project:
+# - An Azure Firewall instance in the hub network
+# - An Azure Firewall policy
+# - An Azure Firewall rule collection group
+# - A route table
+
+# You will need to assign subnets to the route table to allow the firewall to work.
+
+# The Azure Firewall is expensive to run ($1.25/hour) so I recommend removing it once you
+# are done experimenting with it.
+
 # Initialize terraform
 terraform init
 
@@ -11,3 +22,7 @@ $env:TF_VAR_hub_vnet_resource_group = terraform -chdir="..\1-create-domain-contr
 
 # Set up the Firewall
 terraform apply -auto-approve
+
+# Remove the Azure Firewall when you're done
+# You'll need to remove any extra rules you added and subnet route assignments first
+terraform destroy

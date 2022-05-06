@@ -10,4 +10,4 @@ If you don't want to set up the storage account through the portal, you can do s
 1. Install FSLogix on your session host(s)
 1. License your FSLogix users and associate them with the Desktop Application Group that contains the session host(s) with FSLogix
 
-There are two scripts you'll need to complete these tasks. The first one is located in this directory, [`DomainJoinScript.ps1`](DomainJoinScript.ps1). The second installs FSLogix on a sesion host and is available [here].(https://raw.githubusercontent.com/DeanCefola/Azure-WVD/master/PowerShell/FSLogixSetup.ps1)
+There are two scripts you'll need to complete these tasks. The first one is located in this directory, [`DomainJoinScript.ps1`](DomainJoinScript.ps1). The second installs FSLogix on a session host and is available [here](https://raw.githubusercontent.com/DeanCefola/Azure-WVD/master/PowerShell/FSLogixSetup.ps1).

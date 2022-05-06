@@ -1,3 +1,18 @@
+<#
+This script is based on the following article: https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable
+
+It is used to enable Active Directory Domain Services (AD DS) for a storage account.
+
+I have added commands to the end of the script to include the icacls commands for the file share and an output 
+for the configuration of the FSLogix service.
+
+The script is intended to be used with the AzFilesHybrid PowerShell module. 
+
+You can find the latest release here: https://github.com/Azure-Samples/azure-files-samples/releases
+
+Copy the AzFilesHybrid zip file to a temp folder on a domain joined machine and unzip it.
+#>
+
 # Change the execution policy to unblock importing AzFilesHybrid.psm1 module
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 
