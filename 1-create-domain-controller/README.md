@@ -44,7 +44,7 @@ You'll want to have some domain users and an OU structure on your brand new doma
 
 ## Configuring Azure AD Connect
 
-To get your newly created users synced to Azure AD you'll need to install the [Azure AD Connect software](https://www.microsoft.com/en-us/download/details.aspx?id=47594). Download the installer to the domain controller and run the installer to kick off the process. You'll probably need to turn off enhanced IE protection from the Server Manager main window before opening Internet Explorer 11. 
+To get your newly created users synced to Azure AD you'll need to install the [Azure AD Connect software](https://www.microsoft.com/en-us/download/details.aspx?id=47594). Download the installer to the domain controller and run the installer to kick off the process. You'll probably need to turn off enhanced IE protection from the Server Manager main window before opening Internet Explorer 11.
 
 To complete the Azure AD Connect wizard, you will need the Domain Administrator and Global Administrator credentials. Run the insallation and walk through the wizard. Ideally, I'd love to use PowerShell to automate the Azure AD Connect install and config. At the time of writing, there is no way to script the installation and configuration of Azure AD Connect. Am I happy about that? No. Is it the reality? Yes.
 
