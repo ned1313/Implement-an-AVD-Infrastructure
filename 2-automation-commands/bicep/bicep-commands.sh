@@ -6,7 +6,8 @@
 az login
 
 # Set the subscription you want to deploy to
-az account set --subscription "Your_Subscription_Name"
+az account set -s "Your_Subscription_Name"
 
 # Deploy the template to the subscription
-az deployment sub create --location "Your_Location" --template-file "main.bicep" --parameters location="LOCATION" prefix="PREFIX" 
+az deployment sub create --location "westus" --template-file "main.bicep" \
+  --parameters location="westus" prefix="avd" 
